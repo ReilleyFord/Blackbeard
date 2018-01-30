@@ -1,6 +1,6 @@
 Blackbeard
 ==========
-
+(like the pirate... Get it?)
 version: 0.0.1
 
 Simple tool that reads a directory and renames all files based on the users input.
