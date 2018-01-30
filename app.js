@@ -2,7 +2,7 @@ const fs = require('fs-extra');
 const dirs = require('./Modules/readDir.js');
 const readline = require('readline');
 
-const inputDir = 'Testing/Test Files/';
+const inputDir = 'Input/';
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
