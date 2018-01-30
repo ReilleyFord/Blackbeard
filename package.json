@@ -1,0 +1,10 @@
+{
+  "name": "Blackbeard",
+  "version": "1.0.0",
+  "description": "File Renaming Tool",
+  "main": "app.js",
+  "repository": "https://github.com/ReilleyFord/File-Renaming-Tool.git",
+  "author": "Reilley Ford",
+  "license": "MIT",
+  "private": true
+}
