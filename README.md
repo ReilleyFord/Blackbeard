@@ -1,7 +1,7 @@
 Blackbeard
 ==========
-(like the pirate... Get it?)\n
-version: 0.0.1\n
+(like the pirate... Get it?)</br >
+version: 0.0.1</br >
 Tested on High Sierra and Windows 10
 
 Simple tool that reads a directory and renames all files based on the users input.
