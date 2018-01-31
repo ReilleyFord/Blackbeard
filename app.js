@@ -8,9 +8,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-let showName = 'null';
 let fileArr = [];
-
 dirs.readDir(inputDir, fileArr);
 
 let i = 1;
