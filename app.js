@@ -1,3 +1,4 @@
+//packages
 const fs = require('fs-extra');
 const dirs = require('./Modules/readDir.js');
 const readline = require('readline');
@@ -14,12 +15,10 @@ dirs.readDir(inputDir, fileArr);
 let i = 1;
 renameFile = (name, arr) => {
   arr.forEach(file => {
-    if(i < 10) {
+    if(i < 10)
       newName = inputDir + name + 'E0' + i + '.mkv';
-    }
-    else {
+    else
       newName = inputDir + name + 'E' + i + '.mkv';
-    }
     fs.rename(file, newName);
     i++;
   });

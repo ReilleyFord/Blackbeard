@@ -8,7 +8,8 @@ module.exports.readDir = (directory, arr) => {
   try {
     let filePaths = nodeDir.files(directory, {sync:true});
     filePaths.forEach(file => {
-      arr.push(file);
+      if(file.split('.').pop() != 'DS_Store')
+        arr.push(file);
       console.log(file);
     });
   } catch (TypeError) {
