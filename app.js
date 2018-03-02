@@ -24,8 +24,8 @@ dirs.readDir(INPUT, fileArr);
 **/
 (getFileType = () => {
   rl.question('Filetype (eg. mkv or mp4): ', (type) => {
+    type = type.trim().toLowerCase();
     if(type != '' && !type.includes(' ')) {
-      type = type.toLowerCase();
       getShowName(type);
     } else {
       console.log('Filetype cannot be blank and must not contain spaces');
@@ -58,6 +58,7 @@ renameFile = (name, arr, fileType) => {
 **/
 getShowName = (fileType) => {
   rl.question('Show Name and Season (eg. Legion S01): ', (answer) => {
+    answer = answer.trim();
     if(answer != '') {
       renameFile(answer, fileArr, fileType);
       rl.close();
