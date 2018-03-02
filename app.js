@@ -9,9 +9,30 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+//Create input folder -- program will error out later as input folder will be empty
+if(!fs.existsSync(INPUT)) {
+  fs.mkdirSync(INPUT);
+}
+
 let fileArr = [];
 //populating fileArr with filepaths from readDir.js module
 dirs.readDir(INPUT, fileArr);
+
+/**
+ * grabs user input from cmd line, mkv or mp4 and then passes response to
+ * getShowName() function.
+**/
+(getFileType = () => {
+  rl.question('Filetype (eg. mkv or mp4): ', (type) => {
+    if(type != '' && !type.includes(' ')) {
+      type = type.toLowerCase();
+      getShowName(type);
+    } else {
+      console.log('Filetype cannot be blank and must not contain spaces');
+      getFileType();
+    }
+  });
+})();
 
 /**
  * renameFile function will iterate over an array of file file paths
@@ -29,22 +50,6 @@ renameFile = (name, arr, fileType) => {
     i++;
   });
 }
-
-/**
- * grabs user input from cmd line, mkv or mp4 and then passes response to
- * getShowName() function.
-**/
-(getFileType = () => {
-  rl.question('Filetype (eg. mkv or mp4): ', (type) => {
-    if(type != '' && !type.includes(' ')) {
-      type = type.toLowerCase();
-      getShowName(type);
-    } else {
-      console.log('Filetype cannot be blank and must not contain spaces');
-      getFileType();
-    }
-  });
-})();
 
 /**
  * grabs user input (show name and season number) then passes response,
