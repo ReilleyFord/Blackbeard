@@ -1,7 +1,8 @@
 const nodeDir = require('node-dir');
-/*
-  Reads through all directories and sub directories.
-  adds mp4 and mkv file paths to the passed array.
+/**
+ * had this readDir function for another project, adapted for this.
+ * Reads through all directories and sub directories.
+ * adds mp4 and mkv file paths to the passed array.
 */
 module.exports.readDir = (directory, arr) => {
   console.log('Reading Directory');

@@ -24,7 +24,7 @@ renameFile = (name, arr, fileType) => {
       newName = INPUT + name + 'E0' + i + '.' + fileType;
     else
       newName = INPUT + name + 'E' + i + '.' + fileType;
-    console.log('Renaming: ' + file + ' to File: ' + newName);
+    console.log('Renaming: ' + file + ' => ' + newName);
     fs.rename(file, newName);
     i++;
   });
@@ -35,12 +35,12 @@ renameFile = (name, arr, fileType) => {
  * getShowName() function.
 **/
 (getFileType = () => {
-  rl.question('Filetype: (eg. mkv or mp4)', (type) => {
-    if(type != '') {
+  rl.question('Filetype (eg. mkv or mp4): ', (type) => {
+    if(type != '' && !type.includes(' ')) {
       type = type.toLowerCase();
       getShowName(type);
     } else {
-      console.log('Filetype cannot be null');
+      console.log('Filetype cannot be blank and must not contain spaces');
       getFileType();
     }
   });
