@@ -10,7 +10,7 @@ module.exports.readDir = (directory, arr) => {
     let filePaths = nodeDir.files(directory, {sync:true});
     filePaths.forEach(file => {
       let fileExt = file.split('.').pop();
-      if(fileExt == 'mkv' || fileExt == 'mp4') {
+      if(fileExt == 'mkv' || fileExt == 'mp4' || fileExt == 'avi') {
         arr.push(file);
         console.log('Pushing file: ' + file);
       } else {
